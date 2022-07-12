@@ -12,6 +12,7 @@ class SentryExceptionListener:
             {
                 "path": request.get_path_with_query(),
                 "params": request.params,
+                "ip": request.ip(),
             },
         )
 

@@ -12,8 +12,9 @@ class Sentry:
         self.app = application
         self.sentry_config = config("sentry")
 
-        if not env("APP_DEBUG"):
-            self.setup()
+        # if not env("APP_DEBUG"):
+        #     self.setup()
+        self.setup()
 
     def setup(self):
         sentry_sdk.init(

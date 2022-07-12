@@ -1,4 +1,5 @@
 import logging
+from sentry_sdk import add_breadcrumb
 
 
 class SentryQueryLogger(logging.Handler):
@@ -6,7 +7,6 @@ class SentryQueryLogger(logging.Handler):
         super().__init__(level)
 
     def handle(self, log):
-        from sentry_sdk import add_breadcrumb
 
         add_breadcrumb(
             category="query",
