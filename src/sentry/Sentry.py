@@ -4,7 +4,6 @@ import logging
 
 from .loggers.SentryQueueLogger import SentryQueryLogger
 from .listeners.SentryExceptionListener import SentryExceptionListener
-from masonite.environment import env
 
 
 class Sentry:
