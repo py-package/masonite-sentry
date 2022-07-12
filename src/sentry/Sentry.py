@@ -4,6 +4,7 @@ import logging
 
 from .loggers.SentryQueueLogger import SentryQueryLogger
 from .listeners.SentryExceptionListener import SentryExceptionListener
+from masonite.environment import env
 
 
 class Sentry:
@@ -11,9 +12,8 @@ class Sentry:
         self.app = application
         self.sentry_config = config("sentry")
 
-        # if not env("APP_DEBUG"):
-        #     self.setup()
-        self.setup()
+        if not env("APP_DEBUG"):
+            self.setup()
 
     def setup(self):
         sentry_sdk.init(
