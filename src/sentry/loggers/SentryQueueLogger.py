@@ -7,7 +7,6 @@ class SentryQueryLogger(logging.Handler):
         super().__init__(level)
 
     def handle(self, log):
-
         add_breadcrumb(
             category="query",
             message=log.msg,
